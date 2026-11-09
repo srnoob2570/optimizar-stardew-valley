@@ -6,7 +6,7 @@ Blocked by: —
 
 ## Question
 
-¿Qué knobs existen para aumentar la tolerancia de red en Stardew Valley 1.6 con SMAPI 4.5.2, host Linux nativo, y cuáles son seguros?
+¿Qué knobs existen para aumentar la tolerancia de red en Stardew Valley 1.6 con SMAPI 4.5.2, host Linux nativo (a confirmar), y cuáles son seguros?
 
 Cubrir:
 
@@ -17,3 +17,5 @@ Cubrir:
 - Si el ajuste es por host, por cliente o por ambos.
 
 Entregar una tabla con: knob, archivo/comando, default, valor recomendado, riesgo y ámbito. Distinguir hechos verificados de suposiciones.
+
+Estos knobs **no reducen el trabajo del cliente ni la creación de objetos**; solo toleran picos. No cuentan como criterio de éxito del paquete. Antes de asumir Linux, verificar el SO real del host; en Windows `net.core.*` no aplica.

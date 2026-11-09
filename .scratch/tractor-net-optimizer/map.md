@@ -6,7 +6,7 @@ Un spec técnico aprobado para un mod companion de Tractor Mod que reduzca los k
 
 ## Notes
 
-- Dominio: Stardew Valley 1.6.15, SMAPI 4.5.2, Tractor Mod 4.24.4, .NET 6, host Linux nativo. El servidor real usa `Distance: 4`, `TractorSpeed: 2`, `MagneticRadius: 420`; el archivo local de pruebas está en `16 / 4 / 421`.
+- Dominio: Stardew Valley 1.6.15, SMAPI 4.5.2, Tractor Mod 4.24.4, .NET 6, host Linux nativo (a confirmar). El servidor real usa `Distance: 4`, `TractorSpeed: 2`, `MagneticRadius: 420`; el archivo local de pruebas está en `16 / 4 / 421`.
 - Paquete elegido por el usuario: throttle de tiles + supresión de chips visuales + culling + timeout/buffers.
 - Restricción explícita: **no** bajar la frecuencia de red a 20 Hz ni desactivar la interpolación; la prioridad es reducir la sensación de lag sin romper la sincronización.
 - No tocar código, configuración del juego ni del servidor hasta que el mapa esté aprobado.
@@ -27,6 +27,7 @@ Un spec técnico aprobado para un mod companion de Tractor Mod que reduzca los k
 ## Not yet specified
 
 - Cómo medir el cuello real (upload del host vs CPU del cliente) con el host y los clientes concretos; el baseline se concreta en el ticket de aceptación.
+- SO real del host: el mapa y el ticket 01 asumen Linux nativo. Si es Windows, `net.core.*` no aplica.
 - Si el culling por jugador es viable con SMAPI sin tocar el `NetCollection`; depende de la investigación de chips visuales.
 - Cómo evitar doble procesamiento o pérdida de tiles cuando el tractor se mueve durante la cola; depende de la política de throttle.
 - Compatibilidad con Stardropium y otros mods que ya tocan debris o renderizado; no se ha revisado.
