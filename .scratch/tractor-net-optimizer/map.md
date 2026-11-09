@@ -24,6 +24,7 @@ Un spec técnico aprobado para un mod companion de Tractor Mod que reduzca los k
 
 - [Timeout y buffers: knobs seguros](issues/01-timeout-buffers.md): no hay knobs soportados; los timeouts y buffers están hardcodeados o en defaults de Steamworks, y los sysctl del host ya tienen holgura. Solo un patch Harmony opcional, fuera del criterio de éxito.
 - [Chips visuales: detección y supresión](issues/02-visual-chips.md): los chips del tractor son `Debris` CHUNKS sincronizados que se crean en el cliente que conduce; se suprimen en origen con un no-op de `createRadialDebris` solo si `!resource && !item`, usando el buff `Pathoschild.TractorMod` como señal. El companion debe ir en host y en cada cliente que conduce.
+- [Arquitectura y distribución del mod](issues/03-architecture.md): companion standalone con Harmony y dependencia suave de Tractor Mod, instalado en host y todos los clientes; `config.json` + GMCM opcional, degradación fail-soft con log; release zip en GitHub sin Nexus ni auto-actualización, soporte validado para Tractor Mod 4.24.4 / SMAPI 4.5.2.
 
 ## Not yet specified
 
