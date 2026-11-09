@@ -23,14 +23,14 @@ Un spec técnico aprobado para un mod companion de Tractor Mod que reduzca los k
 ## Decisions so far
 
 - [Timeout y buffers: knobs seguros](issues/01-timeout-buffers.md): no hay knobs soportados; los timeouts y buffers están hardcodeados o en defaults de Steamworks, y los sysctl del host ya tienen holgura. Solo un patch Harmony opcional, fuera del criterio de éxito.
+- [Chips visuales: detección y supresión](issues/02-visual-chips.md): los chips del tractor son `Debris` CHUNKS sincronizados que se crean en el cliente que conduce; se suprimen en origen con un no-op de `createRadialDebris` solo si `!resource && !item`, usando el buff `Pathoschild.TractorMod` como señal. El companion debe ir en host y en cada cliente que conduce.
 
 ## Not yet specified
 
 - Cómo medir el cuello real (upload del host vs CPU del cliente) con el host y los clientes concretos; el baseline se concreta en el ticket de aceptación.
 - SO real del host: el host de pruebas es Linux (`7.0.0-43-generic`; `net.core.rmem_max`/`wmem_max` = 4 MiB). El SO del servidor real sigue sin confirmar. Si es Windows, `net.core.*` no aplica.
-- Si el culling por jugador es viable con SMAPI sin tocar el `NetCollection`; depende de la investigación de chips visuales.
 - Cómo evitar doble procesamiento o pérdida de tiles cuando el tractor se mueve durante la cola; depende de la política de throttle.
-- Compatibilidad con Stardropium y otros mods que ya tocan debris o renderizado; no se ha revisado.
+- Compatibilidad con Stardropium: no está instalado y no se pudo verificar; el resto de los 106 DLLs instalados no parchea `createRadialDebris`, `Debris` ni `NetCollection<Debris>.Add`.
 - Si hace falta un modo de compatibilidad distinto para clientes Windows y Linux.
 
 ## Out of scope
