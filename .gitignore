@@ -1,0 +1,12 @@
+# Trazas y salidas de perfilado
+traces/
+*.nettrace
+*.speedscope.json
+*.gcdump
+
+# Código de referencia externo (descompilado del juego)
+references/
+
+# Logs y temporales
+*.log
+.DS_Store
